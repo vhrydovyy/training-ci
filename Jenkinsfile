@@ -24,5 +24,10 @@ pipeline {
 
       }
     }
+    stage('Notify') {
+      steps {
+        mail(subject: 'test', body: 'test', to: 'pashka2012@gmail.com')
+      }
+    }
   }
 }
