@@ -19,14 +19,9 @@ pipeline {
     stage('Run app') {
       steps {
         dir(path: 'flask-app') {
-          sh 'docker-compose down'
+          sh 'docker-compose up -d --build'
         }
 
-      }
-    }
-    stage('Notify') {
-      steps {
-        mail(subject: 'test', body: 'test', to: 'pashka2012@gmail.com')
       }
     }
   }
