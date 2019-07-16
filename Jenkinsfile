@@ -23,12 +23,12 @@ pipeline {
 docker-compose build flask-app
 docker-compose run flask-app pytest -v --junit-xml=/var/opt/junit-report/report.xml
 docker-compose down'''
-          junit 'flask-app/junit-report/report.xml'
-          sh '''# Cleanup Step
-
-sudo rm -rf flask-app/junit-report'''
         }
 
+        junit 'flask-app/junit-report/report.xml'
+        sh '''# Cleanup
+
+sudo rm -rf flask-app/junit-report'''
       }
     }
   }
