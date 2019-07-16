@@ -31,5 +31,13 @@ docker-compose down'''
 sudo rm -rf flask-app/junit-report'''
       }
     }
+    stage('Run App') {
+      steps {
+        dir(path: 'flask-app') {
+          sh 'docker-compose up -d --build'
+        }
+
+      }
+    }
   }
 }
