@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    node {
-      label 'slave'
-    }
-
-  }
+  agent any
   stages {
     stage('Echo Some Text') {
       steps {
